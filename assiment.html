@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 10px 5px;
+        padding: 10px 30px;
+    }
+
+    #great-great-grandparent {
+        border: 2px solid black;
+    }
+
+    #great-grandparent {
+        border: 2px solid red;
+    }
+
+    #grandparent {
+        border: 2px solid blue;
+    }
+
+    #durect-parent {
+        border: 2px solid greenyellow;
+        list-style: none;
+    }
+</style>
+
+<body id="great-great-grandparent">
+    body(great-great-greandparent)
+    <div id="great-grandparent">
+        div(great-greandparent)
+        <ul id="grandparent">
+            ul(grandparent)
+            <li id="durect-parent">
+                li(durect-parent)
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById("great-great-grandparent").addEventListener("click", function () {
+            console.log("great-great-grandparent was clicked!");
+        });
+
+        document.getElementById("great-grandparent").addEventListener("click", function () {
+            console.log("great-greandparent was clicked!");
+        });
+
+        document.getElementById("grandparent").addEventListener("click", function () {
+            console.log("greandparent was clicked!");
+        });
+
+        document.getElementById("durect-parent").addEventlistener("click",function(){
+            console.log("durect-parent was clicked!")
+        });
+    </script>
+</body>
+
+</html>
